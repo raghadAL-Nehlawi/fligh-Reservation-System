@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "flight_s",
+  "info": {
+    "name": "flight ",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "price": {
+      "type": "float",
+      "required": true
+    },
+    "capacity": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "flightDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "to": {
+      "model": "airplan"
+    },
+    "from": {
+      "model": "airplan"
+    },
+    "order": {
+      "via": "flight",
+      "model": "order"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "airplans",
+  "info": {
+    "name": "airplan",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "longitude": {
+      "type": "float",
+      "required": true
+    },
+    "latitude": {
+      "type": "float",
+      "required": true
+    },
+    "city": {
+      "model": "city",
+      "via": "airplans"
+    }
+  }
+}
